@@ -1,0 +1,47 @@
+<h1>{{title}}</h1>
+
+<form action="" class="col-sm-8 col-md-8 " [formGroup]="newUserForm" (ngSubmit)="save()" novalidate>
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" [(ngModel)]="user.name" id="name" class="form-control" formControlName="name">
+        <div *ngIf="newUserForm.controls.name.touched && newUserForm.controls.name.errors">
+            <div *ngIf="newUserForm.controls.name.errors?.required" class="alert alert-danger">Username is required
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" [(ngModel)]="user.email" id="email" class="form-control" formControlName="email">
+        <div *ngIf="newUserForm.controls.email.touched && newUserForm.controls.email.errors">
+            <div *ngIf="newUserForm.controls.email.errors?.emailPatern" class="alert alert-danger">Please Enter Valid Email
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="text" [(ngModel)]="user.phone" id="phone" class="form-control" formControlName="phone">
+    </div>
+    <fieldset class="form-group" formGroupName="address">
+        <legend>Address</legend>
+
+        <div class="form-group">
+            <label for="street">Street</label>
+            <input type="text" [(ngModel)]="user.address.street" id="street" class="form-control" formControlName="street">
+        </div>
+        <div class="form-group">
+            <label for="suite">Suite</label>
+            <input type="text" [(ngModel)]="user.address.suite" id="suite" class="form-control" formControlName="suite">
+        </div>
+        <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" [(ngModel)]="user.address.city" id="city" class="form-control" formControlName="city">
+        </div>
+        <div class="form-group">
+            <label for="zip">ZipCode</label>
+            <input type="text" [(ngModel)]="user.address.zipcode" id="zipcode" class="form-control" formControlName="zipcode">
+        </div>
+
+    </fieldset>
+    <button class="btn btn-primary" type="submit">Save</button>
+</form>
