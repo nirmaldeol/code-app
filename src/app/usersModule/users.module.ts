@@ -18,7 +18,7 @@ import { NewuserComponent } from './newuser/newuser.component';
         ReactiveFormsModule,
         UsersRoutingModule
         ],
-    exports: [],
+    exports:[],
     declarations: [routedComponents],
     providers: [UsersService, PrevenUnsavedChanges]
 })

@@ -8,11 +8,13 @@ import { AppRoutingModule, routedComponents } from './app.routing';
 import { HomeComponent } from './home/home.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+  
   ],
   imports: [
     BrowserModule,

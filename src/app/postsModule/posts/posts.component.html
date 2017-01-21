@@ -1,3 +1,17 @@
-<p>
-  posts works!
-</p>
+<div class=" row">
+    <h1>Posts</h1>
+    <div class="col-md-6 col-sm-6 col-lg-6">
+        <spinner [visible]="postsLoading"></spinner>
+        <select #u class="form-control" (change)="loadPost({userId:u.value})">
+            <option value="">Select a user</option>
+            <option value="{{user.id}}" *ngFor="let user of users" >{{user.name}}</option>
+        </select>
+        <pagination [items]="posts" [pageSize]="paginationSize" (pageChanged)="onPageChanged($event)"> </pagination>
+        <ul class="list-group post">
+            <li class="list-group-item" [class.active]="currentPost == post" *ngFor="let post of pagedPosts" (click)="select(post)">{{post?.title}}</li>
+        </ul>
+    </div>
+    <div class="col-md-6 col-sm-6 col-lg-6">
+        <post-detail [post]="currentPost" [comments]="comments" [commentsLoading]="commentsLoading"></post-detail>
+    </div>
+</div>

@@ -18,9 +18,11 @@
         "mobile": false,
         "styles": [
             "styles.css",
-            "../src/assets/stylesheets/bootstrap.flat.min.css"
+            "../src/assets/stylesheets/bootstrap.flat.min.css",
+            "../src/assets/font-awsome/css/font-awesome.min.css"
         ],
         "scripts": [
+            "../node_modules/underscore/underscore-min.js",
             "../node_modules/jquery/dist/jquery.js",
             "../node_modules/bootstrap/dist/js/bootstrap.js"
         ],

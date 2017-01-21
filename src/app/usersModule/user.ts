@@ -10,5 +10,5 @@ export class Address{
     city:string;
     street:string;
     suite:string;
-    zip:number;
+    zipcode:number;
 }
